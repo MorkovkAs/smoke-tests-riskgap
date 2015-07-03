@@ -10,7 +10,14 @@ Then(/^I enter "([^"]*)" into password field$/) do |password|
   fill_in('user_password', :with => password)
 end
 
-Then(/^I click the botton login$/) do
-  button = '//*[@id="new_user"]/div[5]/div/input'
-  find(:xpath, button).click
+Then(/^I click the button "([^"]*)"$/) do |button|
+  first(:link, button).click
+end
+
+Then(/^I should see "([^"]*)"$/) do |text|
+  expect(page).to have_text(text)
+end
+
+Then(/^I wait for (\d+) seconds$/) do |n|
+  sleep(n.to_i)
 end
