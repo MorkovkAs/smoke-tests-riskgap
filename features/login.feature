@@ -1,12 +1,21 @@
 Feature: Log in to RiskGap Website
 
-  Scenario: Log in successful
+Background:
+  Given I am on the "http://riskgap.ru/" homepage
+  When I click the button Войти в сервис
+  Then I should see "Вам необходимо войти в систему или зарегистрироваться."
 
-    Given I am on the "http://riskgap.ru/" homepage
-    When I click the button "Войти в сервис"
-    Then I should see "Вам необходимо войти в систему или зарегистрироваться."
-    When I enter "mail@gmail.com" into email field
-    And I enter "0000" into password field
-    And I click the button "Войти"
-    Then I wait for 5 seconds
-    Then I should see "Вход в систему выполнен."
+  Scenario Outline: Log in with correct (spelling) email and password
+
+    Then I enter "<email>" into email field
+    And I enter "<password>" into password field
+    And I "<check>" a checkbox "Запомнить меня"
+    When I click the button Войти
+    Then I should see message "<result>"
+
+    Examples:
+      | email           | password     | check | result                               |
+      | email@gmail.com | correct_pass | true  | Вход в систему выполнен.             |
+      | email@gmail.com | correct_pass | false | Вход в систему выполнен.             |
+      | email@gmail.com | 000          | true  | Неверный адрес эл. почты или пароль. |
+      | email@gmail.com | 000          | false | Неверный адрес эл. почты или пароль. |
