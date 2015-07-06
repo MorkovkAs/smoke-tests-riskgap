@@ -1,16 +1,27 @@
 Feature: Register on RiskGap Website
 
-  Scenario Outline: Register with incorrect (spelling) email
+  Background:
+
     Given I am on the "http://riskgap.ru/" homepage
-    When I click the button Регистрация
+    When I click on the button Регистрация
     Then I should see "Регистрация"
-    Then I enter "<my_name>" into name field
-      And I enter "<company_name>" into company field
-      And I enter "<email>" into email field
-      And I enter "<password>" into password field
-      And I enter "<password_conf>" into password confirmation field
+
+  Scenario Outline: Register
+
+    Then I enter "<my_name>" into "user_name" field
+      And I enter "<company>" into "user_company_name" field
+      And I enter "<email>" into "user_email" field
+      And I enter "<password>" into "user_password" field
+      And I enter "<password_conf>" into "user_password_confirmation" field
     When I click the button "Зарегистрироваться"
     Then I should see message "<result>"
+
     Examples:
-      | my_name | company_name | email      | password | password_conf | result                 |
-      | Anton   | HSE          |            | 00000    | 00000         | Ошибки при регистрации |
+      | my_name | company | email                     | password | password_conf | result                 |
+      | Anton   | HSE     |                           | 00000000 | 00000000      | Ошибки при регистрации |
+      | Anton   |         | temp.test.risk@gmail.com  | 00000000 | 00000000      | Ошибки при регистрации |
+      |         | HSE     | temp.test.risk@gmail.com  | 00000000 | 00000000      | Ошибки при регистрации |
+      | Anton   | HSE     | temp.test.risk@gmail.com  | 00000000 | 11111111      | Ошибки при регистрации |
+      | Anton   | HSE     | temp.test.risk@gmail      | 00000000 | 00000000      | Ошибки при регистрации |
+      | Anton   | HSE     | temp.test.risk@gmail      | 00000000 | 00000000      | Ошибки при регистрации |
+      | Anton   | HSE     | temp.test.risk2@gmail.com | 99999999 | 99999999      | Добро пожаловать! Вы успешно зарегистрировались. |
