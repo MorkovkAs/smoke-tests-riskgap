@@ -14,7 +14,7 @@ Feature: Register on RiskGap Website
       And I enter "<password>" into "user_password" field
       And I enter "<password_conf>" into "user_password_confirmation" field
     When I click the button "Зарегистрироваться"
-    Then I should see message "<result>"
+    Then I should see "<result>"
 
     Examples:
       | my_name | company | email                     | password | password_conf | result                 |

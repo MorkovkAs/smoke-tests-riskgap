@@ -23,15 +23,6 @@ And(/^I "([^"]*)" a checkbox "([^"]*)"$/) do |check, name|
   end
 end
 
-Then(/^I click on the button Войти$/) do
-  button = '//*[@id="new_user"]/div[5]/div/input'
-  find(:xpath, button).click
-end
-
-Then(/^I should see message "([^"]*)"$/) do |result|
-  expect(page).to have_text(result)
-end
-
 Then(/^I wait for (\d+) seconds$/) do |n|
   sleep(n.to_i)
 end

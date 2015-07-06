@@ -12,7 +12,7 @@ Feature: Log in to RiskGap Website
       And I enter "<password>" into "user_password" field
       And I "<check>" a checkbox "Запомнить меня"
     When I click the button "Войти"
-    Then I should see message "<result>"
+    Then I should see "<result>"
 
     Examples:
       | email                     | password          | check | result                               |
