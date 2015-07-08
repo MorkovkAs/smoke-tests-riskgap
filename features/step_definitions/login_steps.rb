@@ -2,9 +2,8 @@ Given(/^I am on the "([^"]*)" homepage$/) do |page_to|
   visit page_to
 end
 
-When(/^I click on the button Войти в сервис$/) do
-  button = '/html/body/div[1]/header/div[1]/div/div/nav/div/ul/li[5]/a/span[2]'
-  find(:xpath, button).click
+When(/^I click the link "([^"]*)"/) do |button|
+  click_link(button, match: :first, :visible => true)
 end
 
 Then(/^I should see "([^"]*)"$/) do |text|
@@ -21,6 +20,10 @@ And(/^I "([^"]*)" a checkbox "([^"]*)"$/) do |check, name|
   else
     page.uncheck(name, visible: false)
   end
+end
+
+When(/^I click the button "([^"]*)"/) do |button|
+  click_button(button, match: :first, :visible => true)
 end
 
 Then(/^I wait for (\d+) seconds$/) do |n|

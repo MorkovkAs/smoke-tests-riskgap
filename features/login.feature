@@ -3,7 +3,7 @@ Feature: Log in to RiskGap Website
   Background:
 
     Given I am on the "http://riskgap.ru/" homepage
-    When I click on the button Войти в сервис
+    When I click the link "Войти в сервис"
     Then I should see "Вам необходимо войти в систему или зарегистрироваться."
 
   Scenario Outline: Log in with correct (spelling) email and password
@@ -15,8 +15,8 @@ Feature: Log in to RiskGap Website
     Then I should see "<result>"
 
     Examples:
-      | email                     | password          | check | result                               |
-      | temp.test.risk1@gmail.com | 99999999          | true  | Вход в систему выполнен.             |
-      | temp.test.risk1@gmail.com | 99999999          | false | Вход в систему выполнен.             |
-      | temp.test@gmail.com       | 99999999          | true  | Неверный адрес эл. почты или пароль. |
-      | temp.test@gmail.com       | 99999999          | false | Неверный адрес эл. почты или пароль. |
+      | email                     | password | check | result                               |
+      | temp.test.risk5@gmail.com | 99999999 | true  | Вход в систему выполнен.             |
+      | temp.test.risk5@gmail.com | 99999999 | false | Вход в систему выполнен.             |
+      | temp.test@gmail.com       | 99999999 | true  | Неверный адрес эл. почты или пароль. |
+      | temp.test@gmail.com       | 99999999 | false | Неверный адрес эл. почты или пароль. |

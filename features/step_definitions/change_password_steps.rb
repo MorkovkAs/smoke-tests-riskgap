@@ -9,13 +9,4 @@ Given(/^I am "([^"]*)" logged in RiskGap Website with email "([^"]*)" and passwo
   else
     step 'I should see "Неверный адрес эл. почты или пароль."'
   end
-
-end
-
-When(/^I click on my name$/) do
-  find(:xpath, '/html/body/div[1]/nav/div[2]/ul[2]/li[3]/a/span[2]').click
-end
-
-When(/^I click on Профайл$/) do
-  find(:xpath, '/html/body/div[1]/nav/div[2]/ul[2]/li[3]/ul/li[1]/a').click
 end

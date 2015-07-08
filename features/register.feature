@@ -3,7 +3,7 @@ Feature: Register on RiskGap Website
   Background:
 
     Given I am on the "http://riskgap.ru/" homepage
-    When I click on the button Регистрация
+    When I click the link "Регистрация"
     Then I should see "Регистрация"
 
   Scenario Outline: Register
@@ -19,9 +19,9 @@ Feature: Register on RiskGap Website
     Examples:
       | my_name | company | email                     | password | password_conf | result                 |
       | Anton   | HSE     |                           | 00000000 | 00000000      | Ошибки при регистрации |
-      | Anton   |         | temp.test.risk@gmail.com  | 00000000 | 00000000      | Ошибки при регистрации |
-      |         | HSE     | temp.test.risk@gmail.com  | 00000000 | 00000000      | Ошибки при регистрации |
-      | Anton   | HSE     | temp.test.risk@gmail.com  | 00000000 | 11111111      | Ошибки при регистрации |
-      | Anton   | HSE     | temp.test.risk@gmail      | 00000000 | 00000000      | Ошибки при регистрации |
-      | Anton   | HSE     | temp.test.risk@gmail      | 00000000 | 00000000      | Ошибки при регистрации |
-      | Anton   | HSE     | temp.test.risk2@gmail.com | 99999999 | 99999999      | Добро пожаловать! Вы успешно зарегистрировались. |
+      | Anton   |         | temp.test.risk4@gmail.com | 00000000 | 00000000      | Ошибки при регистрации |
+      |         | HSE     | temp.test.risk4@gmail.com | 00000000 | 00000000      | Ошибки при регистрации |
+      | Anton   | HSE     | temp.test.risk4@gmail.com | 00000000 | 11111111      | Ошибки при регистрации |
+      | Anton   | HSE     | temp.test.risk4@gmail     | 00000000 | 00000000      | Ошибки при регистрации |
+      | Anton   | HSE     | temp.test.risk4@gmail     | 00000000 | 00000000      | Ошибки при регистрации |
+      | Anton   | HSE     | temp.test.risk0@gmail.com | 99999999 | 99999999      | Добро пожаловать! Вы успешно зарегистрировались. |

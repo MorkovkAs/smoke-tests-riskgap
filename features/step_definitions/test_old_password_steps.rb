@@ -1,6 +1,6 @@
-Then(/^I change password from "([^"]*)" to "([^"]*)"$/) do |old_password, new_password|
-  step 'I click on my name'
-  step 'I click on Профайл'
+Then(/^I \(([^"]*)\) change my password from "([^"]*)" to "([^"]*)"$/) do |name, old_password, new_password|
+  step 'I click the link "' + name +'"'
+  step 'I click the link "Профайл"'
   step 'I should see "Установить пароль"'
   step 'I enter "' + old_password +'" into "user_current_password" field'
   step 'I enter "' + new_password +'" into "user_password" field'
@@ -9,8 +9,8 @@ Then(/^I change password from "([^"]*)" to "([^"]*)"$/) do |old_password, new_pa
   step 'I should see "Ваша учетная запись изменена."'
 end
 
-Then(/^I log out from the system$/) do
-  step 'I click on my name'
-  step 'I click on Выйти'
+Then(/^I \(([^"]*)\) log out from the system$/) do |name|
+  step 'I click the link "' + name +'"'
+  step 'I click the link "Выйти"'
   step 'I should see "Вам необходимо войти в систему или зарегистрироваться."'
 end
