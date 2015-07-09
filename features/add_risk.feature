@@ -1,6 +1,6 @@
-Feature: Add 3 users
+Feature: Add risk
 
-  Scenario Outline: Add user
+  Scenario Outline: Add risk
 
     Given I am "true" logged in RiskGap Website with email "<email>" and password "<password>"
     When I click the link "<prj_name>"
