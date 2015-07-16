@@ -1,6 +1,7 @@
 Given(/^I am "([^"]*)" logged in RiskGap Website with email "([^"]*)" and password "([^"]*)"$/) do |successfully, email, password|
-  step 'I am on the "http://riskgap-ru.herokuapp.com/" homepage'
-  step 'I should see "Вам необходимо войти в систему или зарегистрироваться."'
+  #step 'I am on the "http://riskgap-ru.herokuapp.com/" homepage'  appserver1.riskgap.com//users//sign_in
+  step 'I am on the "http://appserver1.riskgap.com//users//sign_in" homepage'
+  #step 'I should see "Вам необходимо войти в систему или зарегистрироваться."'
   step 'I enter "' + email + '" into "user_email" field'
   step 'I enter "' + password + '" into "user_password" field'
   step 'I click the button "Войти"'

@@ -2,7 +2,7 @@ Feature: Change password to RiskGap Website
 
   Scenario Outline: Change password
 
-    Given I am "true" logged in RiskGap Website with email "temp.test.risk5@gmail.com" and password "<password>"
+    Given I am "true" logged in RiskGap Website with email "temp.test.risk@gmail.com" and password "<password>"
     When I click the link "Anton"
       And I click the link "Профайл"
     Then I should see "Установить пароль"

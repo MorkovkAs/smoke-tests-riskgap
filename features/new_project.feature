@@ -21,5 +21,5 @@ Feature: Add project
       And I should see "Все пользователи были добавлены"
 
     Examples:
-      | email                     | password | prj_name           | prj_description     | prj_type              |
-      | temp.test.risk5@gmail.com | 99999999 | Project_Name_Anton | Project Description | project_industry_id_1 |
+      | email                    | password | prj_name           | prj_description     | prj_type              |
+      | temp.test.risk@gmail.com | 99999999 | Project_Name_Anton | Project Description | project_industry_id_1 |

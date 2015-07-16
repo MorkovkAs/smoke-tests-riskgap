@@ -7,4 +7,4 @@ Feature: Search for project
 
     Examples:
       | email                    | password | prj_name           |
-      | temp.test.risk21@mail.ru | 99999999 | Project_Name_Anton |
+      | temp.test.risk20@mail.ru | 99999999 | Project_Name_Anton |

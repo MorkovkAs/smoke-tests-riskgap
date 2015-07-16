@@ -2,7 +2,7 @@ Feature: Log out from RiskGap Website
 
   Background:
 
-    Given I am "true" logged in RiskGap Website with email "temp.test.risk5@gmail.com" and password "99999999"
+    Given I am "true" logged in RiskGap Website with email "temp.test.risk@gmail.com" and password "99999999"
 
   Scenario: Log out
 

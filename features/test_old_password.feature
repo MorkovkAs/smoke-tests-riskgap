@@ -8,6 +8,6 @@ Feature: Test old password in RiskGap Website
     Then I am "false" logged in RiskGap Website with email "<email>" and password "<old_password>"
 
     Examples:
-      | email                     | old_password | new_password |
-      | temp.test.risk5@gmail.com | 99999999     | 11111111     |
-      | temp.test.risk5@gmail.com | 11111111     | 99999999     |
+      | email                    | old_password | new_password |
+      | temp.test.risk@gmail.com | 99999999     | 11111111     |
+      | temp.test.risk@gmail.com | 11111111     | 99999999     |

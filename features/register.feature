@@ -2,7 +2,8 @@ Feature: Register on RiskGap Website
 
   Background:
 
-    Given I am on the "http://riskgap.ru/" homepage
+    #Given I am on the "http://riskgap.ru/" homepage
+    Given I am on the "http://appserver1.riskgap.com//users//sign_in" homepage
     When I click the link "Регистрация"
     Then I should see "Регистрация"
 
@@ -17,11 +18,12 @@ Feature: Register on RiskGap Website
     Then I should see "<result>"
 
     Examples:
-      | my_name | company | email                     | password | password_conf | result                 |
-      | Anton   | HSE     |                           | 00000000 | 00000000      | Ошибки при регистрации |
-      | Anton   |         | temp.test.risk4@gmail.com | 00000000 | 00000000      | Ошибки при регистрации |
-      |         | HSE     | temp.test.risk4@gmail.com | 00000000 | 00000000      | Ошибки при регистрации |
-      | Anton   | HSE     | temp.test.risk4@gmail.com | 00000000 | 11111111      | Ошибки при регистрации |
-      | Anton   | HSE     | temp.test.risk4@gmail     | 00000000 | 00000000      | Ошибки при регистрации |
-      | Anton   | HSE     | temp.test.risk4@gmail     | 00000000 | 00000000      | Ошибки при регистрации |
-      | Anton   | HSE     | temp.test.risk0@gmail.com | 99999999 | 99999999      | Добро пожаловать! Вы успешно зарегистрировались. |
+      | my_name | company | email                    | password | password_conf | result                 |
+      #| Anton   | HSE     |                          | 00000000 | 00000000      | Ошибки при регистрации |
+      #| Anton   |         | temp.test.risk@gmail.com | 00000000 | 00000000      | Ошибки при регистрации |
+      #|         | HSE     | temp.test.risk@gmail.com | 00000000 | 00000000      | Ошибки при регистрации |
+      #| Anton   | HSE     | temp.test.risk@gmail.com | 00000000 | 11111111      | Ошибки при регистрации |
+      #| Anton   | HSE     | temp.test.risk@gmail     | 00000000 | 00000000      | Ошибки при регистрации |
+      #| Anton   | HSE     | temp.test.risk@gmail     | 00000000 | 00000000      | Ошибки при регистрации |
+      #| Anton   | HSE     | temp.test.risk@gmail.com | 99999999 | 99999999      | Добро пожаловать! Вы успешно зарегистрировались. |
+      | Anton   | HSE     | temp.test.risk20@mail.ru | 99999999 | 99999999      | Добро пожаловать! Вы успешно зарегистрировались. |

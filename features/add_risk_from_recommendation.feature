@@ -1,14 +1,16 @@
-Feature: Add risk from template
+Feature: Add risk from recommendation
 
-  Scenario Outline: Add risk from template
+  Scenario Outline: Add risk from recommendation
 
     Given I am "true" logged in RiskGap Website with email "<email>" and password "<password>"
     When I click the link "<prj_name>"
     Then I should see "Идентификация"
-    When I click the link "Импортировать"
-    Then I should see "Описание риска"
-    Then I select template "<template_name>" from list
+    When I click the link "Рекомендации"
+    Then I should see "Выберите категории релевантные вашему проекту"
+    #Then I enter "<template_name>"
+    When I click the button "Сохранить"
     Then I wait for 2 seconds
+    Then I should see "Название риска"
     Then I click the right option Добавить №<number>
     Then I should see "Риск добавлен"
 
@@ -16,5 +18,4 @@ Feature: Add risk from template
       | email                    | password | prj_name           | number | template_name |
       #| temp.test.risk@gmail.com | 99999999 | Project_Name_Anton | 1      | Проект разработки программного обеспечения |
       #| temp.test.risk@gmail.com | 99999999 | Project_Name_Anton | 2      | Проект разработки программного обеспечения |
-      | temp.test.risk@gmail.com | 99999999 | Project_Name_Anton | 1      | Software development project |
-      | temp.test.risk@gmail.com | 99999999 | Project_Name_Anton | 2      | Software development project |
+      | temp.test.risk@gmail.com | 99999999 | Project_Name_Anton | 1      | Software development |
