@@ -10,7 +10,7 @@ Feature: Add 3 users
 
     Then I enter "<email1>" into "user_email" field
     When I click the button "Пригласить"
-    Then I wait for 5 seconds
+    Then I wait for 2 seconds
     Then I should see "<result>"
 
     Then I enter "<email2>" into "user_email" field
