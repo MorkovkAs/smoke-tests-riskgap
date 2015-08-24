@@ -16,7 +16,7 @@ Feature: Create new password to RiskGap Website
       | temp.test.risk@yandex.ru | В течение нескольких минут вы получите письмо с инструкциями по восстановлению пароля. |
 
   Scenario Outline: Open email
-    Then "<email>" should receive an email with "<subject>" as the subject
+    Given "<email>" should receive an email with "<subject>" as the subject
     Then I should see "Установить пароль"
     Then I enter "<password>" into "user_password" field
     Then I enter "<password>" into "user_password_confirmation" field

@@ -25,3 +25,21 @@ Feature: Add 3 users
     Examples:
       | my_email                 | password | email1                    | email2                    | email3                    | result             |
       | temp.test.risk@yandex.ru | 99999999 | temp.test.risk1@yandex.ru | temp.test.risk2@yandex.ru | temp.test.risk3@yandex.ru | Invitation sent to |
+
+
+  Scenario Outline: Register invited user
+
+    Given "<email>" should receive an email with "<subject>" as the subject
+    Then I should see "Установить пароль"
+    And I should see "Ваше имя"
+    Then I enter "<user_name>" into "user_name" field
+    Then I enter "<password>" into "user_password" field
+    Then I enter "<password>" into "user_password_confirmation" field
+    When I click the button "Установить пароль"
+    Then I should see "Ваш пароль установлен! Вы можете войти в систему."
+
+    Examples:
+      | email                     | password | user_name  | subject               |
+      | temp.test.risk1@yandex.ru | 99999999 | New_User_1 | Приглашение в RiskGap |
+      | temp.test.risk2@yandex.ru | 99999999 | New_User_2 | Приглашение в RiskGap |
+      | temp.test.risk3@yandex.ru | 99999999 | New_User_3 | Приглашение в RiskGap |
