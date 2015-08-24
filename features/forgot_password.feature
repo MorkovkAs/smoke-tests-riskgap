@@ -10,22 +10,19 @@ Feature: Create new password to RiskGap Website
     Then I enter "<email>" into "user_email" field
     When I click the button "Отправить мне инструкции по сбросу пароля"
     Then I should see "<text>"
+    Examples:
+
+      | email                    | text                  |
+      | temp.test.risk@yandex.ru | В течение нескольких минут вы получите письмо с инструкциями по восстановлению пароля. |
+
+  Scenario Outline: Open email
+    Then "<email>" should receive an email with "<subject>" as the subject
+    Then I should see "Установить пароль"
+    Then I enter "<password>" into "user_password" field
+    Then I enter "<password>" into "user_password_confirmation" field
+    Then I click the button "Установить пароль"
+    Then I should see "<text>"
 
     Examples:
-      | email                    | text                  |
-      | blablabla@gmail.com      | сохранение не удалось |
-      | temp.test.risk@gmail.com | В течение нескольких минут вы получите письмо с инструкциями по восстановлению пароля. |
-
-  #Scenario: Quick Test of Gmail
-
-    #Given I login to Gmail with username "temp.test.risk@gmail.com" and password "temprisk"
-      #And I open message with subject "Инструкции по восстановлению пароля"
-      #And I should see in email message "Кто-то запросил смену пароля на Вашей учетной записи"
-      ###And I follow verification link in email message for email "temp.test.risk@gmail.com"
-    #Then I should see "Установить пароль"
-      #And I enter "<password>" into "user_password" field
-      #And I enter "<password_conf>" into "user_password_confirmation" field
-    #When I click the button "Установить пароль"
-    #Then I should see "Парол"
-    #Then I wait for 2 seconds
-    ###Then I clear my inbox
+      | password | email                    | subject                             | text |
+      | 99999999 | temp.test.risk@yandex.ru | Инструкции по восстановлению пароля | Ваш пароль изменен. Теперь вы вошли в систему. |

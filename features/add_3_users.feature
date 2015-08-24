@@ -23,6 +23,5 @@ Feature: Add 3 users
 
 
     Examples:
-      | my_email                 | password | email1                     |  email2                     | email3                   | result                          |
-      #| temp.test.risk@gmail.com | 99999999 | temp.test.risk@gmail.com   |  temp.test.risk@gmail.com   | temp.test.risk@gmail.com | This user is in system already! |
-      | temp.test.risk@gmail.com | 99999999 | temp.test.risk20@mail.ru   |  temp.test.risk21@mail.ru   | temp.test.risk22@mail.ru | Invitation sent to              |
+      | my_email                 | password | email1                    | email2                    | email3                    | result             |
+      | temp.test.risk@yandex.ru | 99999999 | temp.test.risk1@yandex.ru | temp.test.risk2@yandex.ru | temp.test.risk3@yandex.ru | Invitation sent to |

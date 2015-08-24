@@ -22,4 +22,4 @@ Feature: Add project
 
     Examples:
       | email                    | password | prj_name           | prj_description     | prj_type              |
-      | temp.test.risk@gmail.com | 99999999 | Project_Name_Anton | Project Description | project_industry_id_1 |
+      | temp.test.risk@yandex.ru | 99999999 | Project_Name_Anton | Project Description | project_industry_id_1 |
