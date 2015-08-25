@@ -13,5 +13,5 @@ Feature: Add risk
 
     Examples:
       | email                    | password | prj_name           | risk_title    | risk_descr | risk_cat   |
-      | temp.test.risk@gmail.com | 99999999 | Project_Name_Anton | My_new_risk_1 | test_1     | Category_1 |
-      | temp.test.risk@gmail.com | 99999999 | Project_Name_Anton | My_new_risk_2 | test_2     | Category_2 |
+      | temp.test.risk@yandex.ru | 99999999 | Project_Name_Anton | My_new_risk_1 | test_1     | Category_1 |
+      | temp.test.risk@yandex.ru | 99999999 | Project_Name_Anton | My_new_risk_2 | test_2     | Category_2 |

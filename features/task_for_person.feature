@@ -9,12 +9,20 @@ Feature: Person will do this task
     Then I should see "<task_name>"
     Then I click the link "<task_name>"
     Then I choose person №<number> to assign
-    Then I enter "Comment_initial" into "task_comment_text" field
+    Then I enter "№<number>" into "task_comment_text" field
     Then I click the button "Сохранить изменения"
     Then I should see "Изменения в задаче сохранены"
 
     Examples:
 
-      | email                    | password | prj_name           | number | task_name  |
-      | temp.test.risk@gmail.com | 99999999 | Project_Name_Anton | 2      | : New_Task |
-      | temp.test.risk@gmail.com | 99999999 | Project_Name_Anton | 1      | : New_Task |
+      | email                    | password | prj_name           | number | task_name |
+      | temp.test.risk@yandex.ru | 99999999 | Project_Name_Anton | 2      | New_Task  |
+      | temp.test.risk@yandex.ru | 99999999 | Project_Name_Anton | 1      | New_Task  |
+
+  #Scenario Outline: Email about new task
+  #  Given "<email>" should receive an email with "<subject>" as the subject
+  #  Then I wait for 30 seconds
+  #
+  #  Examples:
+  #    | email                     | password | user_name  | subject               |
+  #    | temp.test.risk1@yandex.ru | 99999999 | New_User_1 | Приглашение в RiskGap |

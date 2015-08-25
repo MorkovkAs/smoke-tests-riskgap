@@ -14,7 +14,5 @@ Feature: Add risk from template
 
     Examples:
       | email                    | password | prj_name           | number | template_name |
-      #| temp.test.risk@gmail.com | 99999999 | Project_Name_Anton | 1      | Проект разработки программного обеспечения |
-      #| temp.test.risk@gmail.com | 99999999 | Project_Name_Anton | 2      | Проект разработки программного обеспечения |
-      | temp.test.risk@gmail.com | 99999999 | Project_Name_Anton | 1      | Software development project |
-      | temp.test.risk@gmail.com | 99999999 | Project_Name_Anton | 2      | Software development project |
+      | temp.test.risk@yandex.ru | 99999999 | Project_Name_Anton | 1      | Проект разработки программного обеспечения |
+      | temp.test.risk@yandex.ru | 99999999 | Project_Name_Anton | 2      | Проект разработки программного обеспечения |

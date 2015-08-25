@@ -11,5 +11,5 @@ Feature: Filter risk
 
     Examples:
       | email                    | password | prj_name           | risk_cat   | risk_name   |
-      | temp.test.risk@gmail.com | 99999999 | Project_Name_Anton | Category_1 | temp_name_1 |
-      | temp.test.risk@gmail.com | 99999999 | Project_Name_Anton | Category_2 | temp_name_2 |
+      | temp.test.risk@yandex.ru | 99999999 | Project_Name_Anton | Category_1 | temp_name_1 |
+      | temp.test.risk@yandex.ru | 99999999 | Project_Name_Anton | Category_2 | temp_name_2 |

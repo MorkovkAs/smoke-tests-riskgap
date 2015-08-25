@@ -7,7 +7,7 @@ Feature: Add risk from recommendation
     Then I should see "Идентификация"
     When I click the link "Рекомендации"
     Then I should see "Выберите категории релевантные вашему проекту"
-    #Then I enter "<template_name>"
+    Then I enter "<template_name>"
     When I click the button "Сохранить"
     Then I wait for 2 seconds
     Then I should see "Название риска"
@@ -16,6 +16,4 @@ Feature: Add risk from recommendation
 
     Examples:
       | email                    | password | prj_name           | number | template_name |
-      #| temp.test.risk@gmail.com | 99999999 | Project_Name_Anton | 1      | Проект разработки программного обеспечения |
-      #| temp.test.risk@gmail.com | 99999999 | Project_Name_Anton | 2      | Проект разработки программного обеспечения |
-      | temp.test.risk@gmail.com | 99999999 | Project_Name_Anton | 1      | Software development |
+      | temp.test.risk@yandex.ru | 99999999 | Project_Name_Anton | 1      | Разработка программного обеспечения |
