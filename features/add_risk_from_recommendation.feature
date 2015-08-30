@@ -1,3 +1,5 @@
+#done
+
 Feature: Add risk from recommendation
 
   Scenario Outline: Add risk from recommendation
@@ -12,8 +14,8 @@ Feature: Add risk from recommendation
     Then I wait for 2 seconds
     Then I should see "Название риска"
     Then I click the right option Добавить №<number>
-    Then I should see "Риск добавлен"
+    Then I should see "<result>"
 
     Examples:
-      | email                    | password | prj_name           | number | template_name |
-      | temp.test.risk@yandex.ru | 99999999 | Project_Name_Anton | 1      | Разработка программного обеспечения |
+      | email                    | password | prj_name     | number | result        | template_name |
+      | temp.test.risk@yandex.ru | 99999999 | Test Project | 1      | Риск добавлен | Разработка программного обеспечения |

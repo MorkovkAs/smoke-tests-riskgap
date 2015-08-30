@@ -1,3 +1,5 @@
+#done
+
 Feature: Search for project
 
   Scenario Outline: See project
@@ -6,5 +8,5 @@ Feature: Search for project
     Then I should see "<prj_name>"
 
     Examples:
-      | email                     | password | prj_name           |
-      | temp.test.risk1@yandex.ru | 99999999 | Project_Name_Anton |
+      | email                     | password | prj_name     |
+      | temp.test.risk1@yandex.ru | 99999999 | Test Project |

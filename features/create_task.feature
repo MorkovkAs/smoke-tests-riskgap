@@ -1,3 +1,5 @@
+#done
+
 Feature: Add risk and task for it
 
   Scenario Outline: Creat risk and task:
@@ -6,11 +8,11 @@ Feature: Add risk and task for it
     Then I click the link "<risk_name>"
     When I click on Задачи
     Then I should see "Здоровье задачи"
-    Then I enter "New_Task" into "task_title" field
+    Then I enter "create_task" into "task_title" field
     When I click the button "Добавить"
-    Then I should see "New_Task"
+    Then I should see "create_task"
 
     Examples:
 
-      | email                    | password | prj_name           | risk_name     |
-      | temp.test.risk@yandex.ru | 99999999 | Project_Name_Anton | risk_for_task |
+      | email                    | password | prj_name     | risk_name           |
+      | temp.test.risk@yandex.ru | 99999999 | Test Project | create_task.feature |

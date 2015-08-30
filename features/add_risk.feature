@@ -1,3 +1,5 @@
+#done
+
 Feature: Add risk
 
   Scenario Outline: Add risk
@@ -12,6 +14,5 @@ Feature: Add risk
     Then I should see "<risk_title>"
 
     Examples:
-      | email                    | password | prj_name           | risk_title    | risk_descr | risk_cat   |
-      | temp.test.risk@yandex.ru | 99999999 | Project_Name_Anton | My_new_risk_1 | test_1     | Category_1 |
-      | temp.test.risk@yandex.ru | 99999999 | Project_Name_Anton | My_new_risk_2 | test_2     | Category_2 |
+      | email                    | password | prj_name     | risk_title       | risk_descr       | risk_cat   |
+      | temp.test.risk@yandex.ru | 99999999 | Test Project | add_risk.feature | add_risk.feature | Category_1 |

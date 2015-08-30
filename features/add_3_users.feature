@@ -36,10 +36,10 @@ Feature: Add 3 users
     Then I enter "<password>" into "user_password" field
     Then I enter "<password>" into "user_password_confirmation" field
     When I click the button "Установить пароль"
-    Then I should see "Ваш пароль установлен! Вы можете войти в систему."
+    Then I should see "<result>"
 
     Examples:
-      | email                     | password | user_name  | subject               |
-      | temp.test.risk1@yandex.ru | 99999999 | New_User_1 | Приглашение в RiskGap |
-      | temp.test.risk2@yandex.ru | 99999999 | New_User_2 | Приглашение в RiskGap |
-      | temp.test.risk3@yandex.ru | 99999999 | New_User_3 | Приглашение в RiskGap |
+      | email                     | password | user_name | subject               | result |
+      | temp.test.risk1@yandex.ru | 99999999 | User_1    | Приглашение в RiskGap | Ваш пароль установлен! Вы можете войти в систему. |
+      | temp.test.risk2@yandex.ru | 99999999 | User_2    | Приглашение в RiskGap | Ваш пароль установлен! Вы можете войти в систему. |
+      | temp.test.risk3@yandex.ru | 99999999 | User_3    | Приглашение в RiskGap | Ваш пароль установлен! Вы можете войти в систему. |

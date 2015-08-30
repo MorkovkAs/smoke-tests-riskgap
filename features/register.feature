@@ -8,14 +8,14 @@ Feature: Register on RiskGap Website
 
   Scenario Outline: Register
 
-    Then I enter "<my_name>" into "user_name" field
+    Then I enter "<name>" into "user_name" field
       And I enter "<company>" into "user_company_name" field
       And I enter "<email>" into "user_email" field
       And I enter "<password>" into "user_password" field
-      And I enter "<password_conf>" into "user_password_confirmation" field
+      And I enter "<password>" into "user_password_confirmation" field
     When I click the button "Зарегистрироваться"
     Then I should see "<result>"
 
     Examples:
-      | my_name   | company | email                    | password | password_conf | result                 |
-      | AntonBase | HSE     | temp.test.risk@yandex.ru | 99999999 | 99999999      | Добро пожаловать! Вы успешно зарегистрировались. |
+      | name  | company | email                    | password | result |
+      | Anton | HSE     | temp.test.risk@yandex.ru | 99999999 | Добро пожаловать! Вы успешно зарегистрировались. |

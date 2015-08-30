@@ -1,8 +1,15 @@
+#done
+
 Feature: Add risk and rate it
 
-  Scenario: Create risk:
-    
-    Given I ("temp.test.risk@yandex.ru", "99999999") have logged in and created a risk "risk_for_rate" with category "Category_for_rate" for "Project_Name_Anton"
+  Scenario Outline: Create risk for testing rate_risk.feature
+
+    Given I ("<email>", "<password>") have logged in and created a risk "rate_risk.feature" with category "Category_1" for "<prj_name>"
+
+  Examples:
+    | email                    | password | prj_name     |
+    | temp.test.risk@yandex.ru | 99999999 | Test Project |
+
 
   Scenario Outline: Rate risk branch
 
@@ -22,13 +29,18 @@ Feature: Add risk and rate it
 
     Examples:
     
-      | name       | email                     | password | prj_name           | risk_name     | probability | impact | value | time |
-      | AntonBase  | temp.test.risk@yandex.ru  | 99999999 | Project_Name_Anton | risk_for_rate | 8           | 8      | 100   | 10   |
-      | New_User_1 | temp.test.risk1@yandex.ru | 99999999 | Project_Name_Anton | risk_for_rate | 2           | 2      | 4     | 2    |
+      | name   | email                     | password | prj_name     | risk_name         | probability | impact | value | time |
+      | Anton  | temp.test.risk@yandex.ru  | 99999999 | Test Project | rate_risk.feature | 8           | 8      | 100   | 10   |
+      | User_1 | temp.test.risk1@yandex.ru | 99999999 | Test Project | rate_risk.feature | 2           | 2      | 4     | 2    |
 
-  Scenario: Test average
+
+  Scenario Outline: Test average
     
-    Given I am "true" logged in RiskGap Website with email "temp.test.risk@yandex.ru" and password "99999999"
-    Then I click the link "Project_Name_Anton"
+    Given I am "true" logged in RiskGap Website with email "<email>" and password "<password>"
+    Then I click the link "<prj_name>"
     When I click the link "Реестр"
     Then I should see "$52"
+
+    Examples:
+      | email                    | password | prj_name     |
+      | temp.test.risk@yandex.ru | 99999999 | Test Project |

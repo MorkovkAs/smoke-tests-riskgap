@@ -1,3 +1,6 @@
+#try from clear
+#done
+
 Feature: Add project
 
   Scenario Outline: Create project
@@ -21,5 +24,5 @@ Feature: Add project
       And I should see "Все пользователи были добавлены"
 
     Examples:
-      | email                    | password | prj_name           | prj_description     | prj_type              |
-      | temp.test.risk@yandex.ru | 99999999 | Project_Name_Anton | Project Description | project_industry_id_1 |
+      | email                    | password | prj_name     | prj_description  | prj_type              |
+      | temp.test.risk@yandex.ru | 99999999 | Test Project | Test Description | project_industry_id_1 |

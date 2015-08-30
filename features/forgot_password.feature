@@ -1,3 +1,5 @@
+#done
+
 Feature: Create new password to RiskGap Website
 
   Scenario Outline: Get mail with new password
@@ -10,9 +12,10 @@ Feature: Create new password to RiskGap Website
     Then I enter "<email>" into "user_email" field
     When I click the button "Отправить мне инструкции по сбросу пароля"
     Then I should see "<text>"
+    Then I wait for 5 seconds
     Examples:
 
-      | email                    | text                  |
+      | email                    | text |
       | temp.test.risk@yandex.ru | В течение нескольких минут вы получите письмо с инструкциями по восстановлению пароля. |
 
   Scenario Outline: Open email

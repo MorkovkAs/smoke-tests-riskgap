@@ -1,3 +1,5 @@
+#done
+
 Feature: Add risk from template
 
   Scenario Outline: Add risk from template
@@ -10,9 +12,8 @@ Feature: Add risk from template
     Then I select template "<template_name>" from list
     Then I wait for 2 seconds
     Then I click the right option Добавить №<number>
-    Then I should see "Риск добавлен"
+    Then I should see "<result>"
 
     Examples:
-      | email                    | password | prj_name           | number | template_name |
-      | temp.test.risk@yandex.ru | 99999999 | Project_Name_Anton | 1      | Проект разработки программного обеспечения |
-      | temp.test.risk@yandex.ru | 99999999 | Project_Name_Anton | 2      | Проект разработки программного обеспечения |
+      | email                    | password | prj_name     | number | result        | template_name |
+      | temp.test.risk@yandex.ru | 99999999 | Test Project | 1      | Риск добавлен | Проект разработки программного обеспечения |

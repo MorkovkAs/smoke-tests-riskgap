@@ -1,3 +1,5 @@
+#done
+
 Feature: Filter risk
 
   Scenario Outline: Filter risks by category
@@ -10,6 +12,5 @@ Feature: Filter risk
     Then I should see "<risk_name>"
 
     Examples:
-      | email                    | password | prj_name           | risk_cat   | risk_name   |
-      | temp.test.risk@yandex.ru | 99999999 | Project_Name_Anton | Category_1 | temp_name_1 |
-      | temp.test.risk@yandex.ru | 99999999 | Project_Name_Anton | Category_2 | temp_name_2 |
+      | email                    | password | prj_name     | risk_cat   | risk_name           |
+      | temp.test.risk@yandex.ru | 99999999 | Test Project | Category_1 | filter_risk.feature |

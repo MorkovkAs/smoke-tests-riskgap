@@ -1,11 +1,23 @@
+#done
+
 Feature: Add risk and rate it
 
- Scenario Outline: Rate risk branch
+  Scenario Outline: Create risk for testing change_rate_of_risk.feature
+
+    Given I ("<email>", "<password>") have logged in and created a risk "change_rate_of_risk.feature" with category "Category_for_task" for "<prj_name>"
+
+  Examples:
+    | email                    | password | prj_name     |
+    | temp.test.risk@yandex.ru | 99999999 | Test Project |
+
+
+  Scenario Outline: Rate risk branch
 
     Given I am "true" logged in RiskGap Website with email "<email>" and password "<password>"
     When I click the link "<prj_name>"
     Then I should see "Идентификация"
-    When I click the link "Оценка"
+    Then I click the link "Оценка"
+    Then I click the link "<risk_name>"
     Then I should see "Влияние в USD"
     And I choose Вероятность as <probability>
     And I choose Влияние as <impact>
@@ -16,12 +28,17 @@ Feature: Add risk and rate it
     Then I "<name>" logout from the system
 
     Examples:
-      | name       | email                     | password | prj_name           | probability | impact | value | time |
-      | AntonBase  | temp.test.risk@yandex.ru  | 99999999 | Project_Name_Anton | 4           | 4      | 2     | 1    |
-      | New_User_1 | temp.test.risk1@yandex.ru | 99999999 | Project_Name_Anton | 8           | 8      | 6     | 3    |
+      | name   | email                     | password | prj_name     | probability | impact | value | time | risk_name |
+      | Anton  | temp.test.risk@yandex.ru  | 99999999 | Test Project | 4           | 4      | 2     | 1    | change_rate_of_risk.feature |
+      | User_1 | temp.test.risk1@yandex.ru | 99999999 | Test Project | 8           | 8      | 6     | 3    | change_rate_of_risk.feature |
 
-  Scenario: Test average
-    Given I am "true" logged in RiskGap Website with email "temp.test.risk@yandex.ru" and password "99999999"
-    Then I click the link "Project_Name_Anton"
+
+  Scenario Outline: Test average
+    Given I am "true" logged in RiskGap Website with email "<email>" and password "<password>"
+    Then I click the link "<prj_name>"
     When I click the link "Реестр"
     Then I should see "$4"
+
+  Examples:
+    | email                    | password | prj_name     |
+    | temp.test.risk@yandex.ru | 99999999 | Test Project |

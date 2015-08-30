@@ -1,3 +1,5 @@
+#done
+
 Feature: Log in to RiskGap Website
 
   Background:
@@ -15,5 +17,5 @@ Feature: Log in to RiskGap Website
     Then I should see "<result>"
 
     Examples:
-      | email                    | password | check | result                               |
-      | temp.test.risk@yandex.ru | 99999999 | true  | Вход в систему выполнен.             |
+      | email                    | password | check | result                   |
+      | temp.test.risk@yandex.ru | 99999999 | true  | Вход в систему выполнен. |
