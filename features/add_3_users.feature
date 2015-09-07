@@ -1,3 +1,5 @@
+#done
+
 Feature: Add 3 users
 
   Scenario Outline: Add user
