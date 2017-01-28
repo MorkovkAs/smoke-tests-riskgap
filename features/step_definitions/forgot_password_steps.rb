@@ -1,7 +1,3 @@
-When(/^I click on the button Забыли пароль\?$/) do
-  find(:xpath, '/html/body/div[1]/div[1]/div[2]/div/div[2]/form/div[5]/div/a').click
-end
-
 Then(/^"([^"]*)" should receive an email with "([^"]*)" as the subject$/) do |email_address, subject|
   Mail.defaults do
     retriever_method :pop3, :address => "pop.yandex.ru",

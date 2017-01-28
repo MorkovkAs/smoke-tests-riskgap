@@ -8,6 +8,7 @@ Feature: Filter risk
     Then I should see "Реестр"
     When I click the link "Реестр"
     Then I should see "Здоровье риска"
+    When I click the button "Категории"
     When I click the link "<risk_cat>"
     Then I should see "<risk_name>"
 

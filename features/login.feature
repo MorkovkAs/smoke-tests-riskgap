@@ -5,7 +5,8 @@ Feature: Log in to RiskGap Website
   Background:
 
     Given I am on the "http://riskgap.ru/" homepage
-    When I click the link "Войти в сервис"
+    When I click the link "ВОЙТИ В СЕРВИС"
+    Then I wait for 3 seconds
     Then I should see "Вам необходимо войти в систему или зарегистрироваться."
 
   Scenario Outline: Log in with correct (spelling) email and password
